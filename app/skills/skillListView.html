@@ -1,0 +1,47 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading"
+         style="font-size: large">
+        Skill List
+    </div>
+</div>
+<div class="panel-body">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>
+                    <button type="button"
+                            class="btn btn-primary"
+                            ng-click="vm.toggleProductName()">
+                        {{vm.showProductName ?"Hide":"Show"}} Skill Name
+                    </button>
+                </td>
+                <td>Id</td>                
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="skill in vm.skills">
+                <!--<td ng-show="vm.showProductName">{{skill.name}} </td>-->
+                <td>
+                    <a ui-sref="skillDetail({id: skill.id})">
+                        {{skill.name}}
+                    </a>
+                </td>
+                <td>{{skill.id}}</td>
+                <td>
+                    <a class="btn btn-primary"
+                       ui-sref="skillEdit.info({id: skill.id})">
+                        Edit
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-primary"
+                       ng-click="vm.delete(skill.id)">
+                        Delete
+                    </a>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+</div>
